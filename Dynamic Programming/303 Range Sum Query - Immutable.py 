@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 25 22:03:20 2019
+
+@author: varshabhat
+"""
+
+class NumArray(object):
+
+    def __init__(self, nums):
+        """
+        :type nums: List[int]
+        """
+        self.tot = [0] * (len(nums)+1)
+        for i in range(0, len(nums)):
+            self.tot[i+1] = self.tot[i] + nums[i]
+
+    def sumRange(self, i, j):
+        """
+        :type i: int
+        :type j: int
+        :rtype: int
+        """
+        return self.tot[j+1] - self.tot[i]
